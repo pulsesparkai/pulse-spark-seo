@@ -1,24 +1,12 @@
 import { Sparkles, User, ChevronDown } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-
 export function TopBar() {
-  return (
-    <header className="h-16 border-b border-border bg-dashboard-surface px-6 flex items-center justify-between">
+  return <header className="h-16 border-b border-border bg-dashboard-surface px-6 flex items-center justify-between">
       <div className="flex items-center gap-4">
         <SidebarTrigger className="p-2" />
-        <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </div>
-          <span className="font-bold text-xl text-primary hidden sm:block">PulseSpark</span>
-        </div>
+        
       </div>
 
       <div className="flex items-center gap-4">
@@ -39,6 +27,5 @@ export function TopBar() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-    </header>
-  );
+    </header>;
 }
