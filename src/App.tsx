@@ -11,7 +11,7 @@ import { QuickActionsButton } from "@/components/shared/QuickActionsButton";
 import { AIAssistantModal } from "@/components/shared/AIAssistantModal";
 import { useState } from "react";
 import Index from "./pages/Index";
-import SEOCanvas from "./pages/SEOCanvas";
+import AOECanvas from "./pages/AOECanvas";
 import ContentBuilder from "./pages/ContentBuilder";
 import SiteAudit from "./pages/SiteAudit";
 import AIPrompts from "./pages/AIPrompts";
@@ -38,7 +38,7 @@ const App = () => {
                 <main className="flex-1 p-6">
                   <Routes>
                     <Route path="/" element={<Index />} />
-                    <Route path="/canvas" element={<SEOCanvas />} />
+                    <Route path="/canvas" element={<AOECanvas />} />
                     <Route path="/content" element={<ContentBuilder />} />
                     <Route path="/audit" element={<SiteAudit />} />
                     <Route path="/prompts" element={<AIPrompts />} />

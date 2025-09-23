@@ -2,25 +2,30 @@ import {
   TrendingUp, 
   Globe, 
   Database, 
-  Award 
+  Award,
+  DollarSign
 } from "lucide-react";
 import { MetricCard } from "@/components/dashboard/MetricCard";
-import { CrawlStatus } from "@/components/dashboard/CrawlStatus";
-import { IssuesPanel } from "@/components/dashboard/IssuesPanel";
+import { AIEngineVisibility } from "@/components/dashboard/AIEngineVisibility";
+import { CitationFeed } from "@/components/dashboard/CitationFeed";
+import { ROICalculator } from "@/components/dashboard/ROICalculator";
 import { CompetitorChart } from "@/components/dashboard/CompetitorChart";
 
 const Index = () => {
   return (
     <div className="space-y-6 animate-fade-up">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-foreground">SEO Dashboard</h1>
-        <p className="text-muted-foreground">Monitor your website's search performance and optimization opportunities</p>
+        <h1 className="text-3xl font-bold text-foreground">AEO Dashboard</h1>
+        <p className="text-muted-foreground">Monitor your Answer Engine Optimization performance and AI citation opportunities</p>
       </div>
 
-      {/* Metric Cards */}
+      {/* AI Engine Visibility */}
+      <AIEngineVisibility />
+
+      {/* Main Metric Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <MetricCard
-          title="AI Readiness Score"
+          title="AEO Readiness Score"
           value="87"
           suffix="%"
           icon={TrendingUp}
@@ -28,40 +33,37 @@ const Index = () => {
           delay={0}
         />
         <MetricCard
-          title="Pages Indexed"
-          value="1247"
+          title="AI Citations"
+          value="1,247"
           icon={Globe}
-          trend={{ value: 8, isPositive: true }}
+          trend={{ value: 23, isPositive: true }}
           delay={150}
         />
         <MetricCard
-          title="Schema Coverage"
-          value="64"
-          suffix="%"
+          title="Coverage"
+          value="4/5"
           icon={Database}
-          trend={{ value: -3, isPositive: false }}
+          trend={{ value: 1, isPositive: true }}
           delay={300}
         />
         <MetricCard
-          title="Content Score"
-          value="B+"
-          icon={Award}
-          trend={{ value: 15, isPositive: true }}
+          title="Est. Revenue from AI"
+          value="$47K"
+          suffix="/mo"
+          icon={DollarSign}
+          trend={{ value: 28, isPositive: true }}
           delay={450}
         />
       </div>
 
       {/* Main Dashboard Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1">
-          <CrawlStatus />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-6">
+          <CitationFeed />
+          <ROICalculator />
         </div>
         
-        <div className="lg:col-span-1">
-          <IssuesPanel />
-        </div>
-        
-        <div className="lg:col-span-1">
+        <div className="space-y-6">
           <CompetitorChart />
         </div>
       </div>

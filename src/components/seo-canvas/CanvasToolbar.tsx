@@ -12,6 +12,8 @@ interface CanvasToolbarProps {
   onUndo: () => void;
   onRedo: () => void;
   selectedNodes: string[];
+  onSimulationToggle?: () => void;
+  simulationActive?: boolean;
 }
 
 export function CanvasToolbar({ 
@@ -22,7 +24,9 @@ export function CanvasToolbar({
   onExportSitemap,
   onUndo,
   onRedo,
-  selectedNodes 
+  selectedNodes,
+  onSimulationToggle,
+  simulationActive = false
 }: CanvasToolbarProps) {
   const tools = [
     { id: 'select', icon: MousePointer, label: 'Select' },
@@ -83,8 +87,20 @@ export function CanvasToolbar({
           className="flex items-center gap-2 text-purple-600 border-purple-200 hover:bg-purple-50"
         >
           <Sparkles className="h-4 w-4" />
-          <span className="hidden sm:inline">AI Suggest</span>
+          <span className="hidden sm:inline">AI Optimize</span>
         </Button>
+
+        {onSimulationToggle && (
+          <Button
+            variant={simulationActive ? "default" : "outline"}
+            size="sm"
+            onClick={onSimulationToggle}
+            className="flex items-center gap-2"
+          >
+            <Sparkles className="h-4 w-4" />
+            <span className="hidden sm:inline">Simulation</span>
+          </Button>
+        )}
 
         <Button
           variant="outline"
@@ -93,7 +109,7 @@ export function CanvasToolbar({
           className="flex items-center gap-2"
         >
           <Download className="h-4 w-4" />
-          <span className="hidden sm:inline">Export Sitemap</span>
+          <span className="hidden sm:inline">Export AEO</span>
         </Button>
 
         <Separator orientation="vertical" className="h-6" />

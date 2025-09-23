@@ -61,6 +61,19 @@ export default {
           surface: "hsl(var(--dashboard-surface))",
           "surface-hover": "hsl(var(--dashboard-surface-hover))",
         },
+        ai: {
+          chatgpt: "hsl(var(--chatgpt))",
+          claude: "hsl(var(--claude))",
+          perplexity: "hsl(var(--perplexity))",
+          gemini: "hsl(var(--gemini))",
+          deepseek: "hsl(var(--deepseek))",
+        },
+        citation: {
+          high: "hsl(var(--citation-high))",
+          medium: "hsl(var(--citation-medium))",
+          low: "hsl(var(--citation-low))",
+          none: "hsl(var(--citation-none))",
+        },
         metric: {
           card: "hsl(var(--metric-card))",
           value: "hsl(var(--metric-value))",

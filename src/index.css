@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PulseSpark SEO App - Monochrome Design System */
+/* PulseSpark AEO Platform - AI Engine Optimization Design System */
 
 @layer base {
   :root {
@@ -46,6 +46,19 @@
     --sidebar-accent-foreground: 0 0% 0%;
     --sidebar-border: 0 0% 90%;
     --sidebar-ring: 0 0% 0%;
+    
+    /* AI Engine Colors */
+    --chatgpt: 116 30% 58%;
+    --claude: 24 100% 65%;
+    --perplexity: 225 100% 65%;
+    --gemini: 262 100% 70%;
+    --deepseek: 0 0% 15%;
+    
+    /* AEO Status Colors */
+    --citation-high: 142 70% 45%;
+    --citation-medium: 48 96% 60%;
+    --citation-low: 0 84% 60%;
+    --citation-none: 0 0% 60%;
     
     /* Semantic Design Tokens */
     --dashboard-surface: 0 0% 100%;
