@@ -9,6 +9,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import Index from "./pages/Index";
 import SEOCanvas from "./pages/SEOCanvas";
 import ContentBuilder from "./pages/ContentBuilder";
+import SiteAudit from "./pages/SiteAudit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/canvas" element={<SEOCanvas />} />
                   <Route path="/content" element={<ContentBuilder />} />
-                  <Route path="/audit" element={<div className="p-8 text-center text-muted-foreground">Site Audit - Coming Soon</div>} />
+                  <Route path="/audit" element={<SiteAudit />} />
                   <Route path="/prompts" element={<div className="p-8 text-center text-muted-foreground">AI Prompts - Coming Soon</div>} />
                   <Route path="/settings" element={<div className="p-8 text-center text-muted-foreground">Settings - Coming Soon</div>} />
                   <Route path="*" element={<NotFound />} />
