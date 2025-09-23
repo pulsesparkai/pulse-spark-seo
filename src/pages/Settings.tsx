@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/hooks/use-toast";
+import { UnitEconomics } from "@/components/dashboard/UnitEconomics";
 import { 
   Clock, 
   Users, 
@@ -79,10 +80,10 @@ export default function Settings() {
 
   return (
     <div className="space-y-6">
-      <div className="space-y-2">
+        <div className="space-y-2">
         <h1 className="text-3xl font-bold text-foreground">Settings</h1>
         <p className="text-muted-foreground">
-          Configure your SEO monitoring and analysis preferences
+          Configure your AEO monitoring and analysis preferences
         </p>
       </div>
 
@@ -219,13 +220,16 @@ export default function Settings() {
           </CardContent>
         </Card>
 
+        {/* Unit Economics & Business Model */}
+        <UnitEconomics />
+
         {/* Export Options */}
         <Card>
           <CardHeader className="flex flex-row items-center gap-2">
             <Download className="h-5 w-5 text-muted-foreground" />
             <div>
               <CardTitle>Export Options</CardTitle>
-              <CardDescription>Download your SEO data and reports</CardDescription>
+              <CardDescription>Download your AEO data and reports</CardDescription>
             </div>
           </CardHeader>
           <CardContent>
@@ -233,11 +237,11 @@ export default function Settings() {
               <Button 
                 variant="outline" 
                 className="h-auto p-4 flex flex-col gap-2"
-                onClick={() => exportData("SEO Report")}
+                onClick={() => exportData("AEO Report")}
               >
                 <Download className="h-5 w-5" />
                 <div className="text-center">
-                  <div className="font-medium">SEO Report</div>
+                  <div className="font-medium">AEO Report</div>
                   <div className="text-xs text-muted-foreground">Comprehensive PDF</div>
                 </div>
               </Button>
