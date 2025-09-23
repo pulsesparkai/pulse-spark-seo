@@ -1,7 +1,7 @@
 import { CrawlOverview } from '@/components/site-audit/CrawlOverview';
 import { AEOIssuesSection } from '@/components/site-audit/AEOIssuesSection';
 
-export default function AEOAudit() {
+function AEOAudit() {
   return (
     <div className="space-y-8 h-full">
       <div className="space-y-2">
@@ -16,3 +16,5 @@ export default function AEOAudit() {
     </div>
   );
 }
+
+export default AEOAudit;

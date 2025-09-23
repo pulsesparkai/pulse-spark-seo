@@ -47,9 +47,9 @@ export function NodeDetailsPanel({ node, isOpen, onClose, onOptimize }: NodeDeta
             
             <div className="flex items-center gap-2">
               <Badge className={getStatusColor(nodeData.status)}>
-                {nodeData.status.replace('-', ' ')}
+                {nodeData.status?.replace('-', ' ') || 'Unknown'}
               </Badge>
-              <span className="text-sm font-medium">Score: {nodeData.seoScore}%</span>
+              <span className="text-sm font-medium">Score: {nodeData.seoScore || 0}%</span>
             </div>
           </div>
 
