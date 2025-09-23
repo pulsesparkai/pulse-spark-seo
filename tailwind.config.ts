@@ -57,6 +57,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        dashboard: {
+          surface: "hsl(var(--dashboard-surface))",
+          "surface-hover": "hsl(var(--dashboard-surface-hover))",
+        },
+        metric: {
+          card: "hsl(var(--metric-card))",
+          value: "hsl(var(--metric-value))",
+          label: "hsl(var(--metric-label))",
+        },
+        status: {
+          surface: "hsl(var(--status-surface))",
+          success: "hsl(var(--success-indicator))",
+          warning: "hsl(var(--warning-indicator))",
+          error: "hsl(var(--error-indicator))",
+        },
+      },
+      backgroundImage: {
+        "gradient-surface": "var(--gradient-surface)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-metric": "var(--gradient-metric)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        metric: "var(--shadow-metric)",
+        sidebar: "var(--shadow-sidebar)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +105,54 @@ export default {
             height: "0",
           },
         },
+        "metric-bounce": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "fade-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "pulse-slow": {
+          "0%, 100%": {
+            opacity: "0.3",
+          },
+          "50%": {
+            opacity: "0.6",
+          },
+        },
+        "count-up": {
+          "0%": {
+            transform: "scale(0.8)",
+            opacity: "0",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+            opacity: "0.7",
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "metric-bounce": "metric-bounce 2s ease-in-out infinite",
+        "fade-up": "fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
+        "count-up": "count-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
       },
     },
   },
