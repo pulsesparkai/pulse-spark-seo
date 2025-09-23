@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/layout/AppSidebar";
 import { TopBar } from "@/components/layout/TopBar";
 import Index from "./pages/Index";
 import SEOCanvas from "./pages/SEOCanvas";
+import ContentBuilder from "./pages/ContentBuilder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,7 +28,7 @@ const App = () => (
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/canvas" element={<SEOCanvas />} />
-                  <Route path="/content" element={<div className="p-8 text-center text-muted-foreground">Content Builder - Coming Soon</div>} />
+                  <Route path="/content" element={<ContentBuilder />} />
                   <Route path="/audit" element={<div className="p-8 text-center text-muted-foreground">Site Audit - Coming Soon</div>} />
                   <Route path="/prompts" element={<div className="p-8 text-center text-muted-foreground">AI Prompts - Coming Soon</div>} />
                   <Route path="/settings" element={<div className="p-8 text-center text-muted-foreground">Settings - Coming Soon</div>} />
