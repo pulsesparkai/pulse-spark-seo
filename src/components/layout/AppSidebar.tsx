@@ -21,10 +21,10 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigationItems = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "SEO Canvas", url: "/canvas", icon: Palette },
-  { title: "Content Builder", url: "/content", icon: FileText },
-  { title: "Site Audit", url: "/audit", icon: Search },
+  { title: "AEO Command Center", url: "/", icon: LayoutDashboard },
+  { title: "AEO Citation Flow", url: "/canvas", icon: Palette },
+  { title: "AI Answer Optimizer", url: "/content", icon: FileText },
+  { title: "AEO Audit", url: "/audit", icon: Search },
   { title: "AI Prompts", url: "/prompts", icon: Sparkles },
   { title: "Settings", url: "/settings", icon: Settings },
 ];

@@ -1,4 +1,15 @@
-interface SEONodeData {
+export interface SEONode {
+  id: string;
+  url: string;
+  title: string;
+  type: 'homepage' | 'product' | 'category' | 'blog' | 'other';
+  status: 'optimized' | 'needs-work' | 'critical';
+  seoScore: number;
+  missingElements: string[];
+  position: { x: number; y: number };
+}
+
+export interface SEONodeData extends Record<string, unknown> {
   id: string;
   url: string;
   title: string;

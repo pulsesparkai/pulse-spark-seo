@@ -19,7 +19,7 @@ import { NodeDetailsPanel } from '@/components/seo-canvas/NodeDetailsPanel';
 import { CanvasToolbar } from '@/components/seo-canvas/CanvasToolbar';
 import { OptimizationPanel } from '@/components/seo-canvas/OptimizationPanel';
 import { SimulationPanel } from '@/components/aeo-canvas/SimulationPanel';
-import { SEONode as SEONodeType, CanvasTool } from '@/components/seo-canvas/types';
+import { SEONode as SEONodeType, SEONodeData as SEONodeDataType, CanvasTool } from '@/components/seo-canvas/types';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -33,7 +33,7 @@ const nodeTypes = {
 };
 
 // Website Pages (left column)
-const initialNodes: Node[] = [
+const initialNodes: Node<SEONodeData | any>[] = [
   // Website Pages - Left Column
   {
     id: 'homepage',
@@ -167,10 +167,10 @@ const initialEdges: Edge[] = [
 export default function SEOCanvas() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const [selectedNode, setSelectedNode] = useState<Node | null>(null);
+  const [selectedNode, setSelectedNode] = useState<Node<SEONodeData> | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [activeTool, setActiveTool] = useState<CanvasTool>('select');
-  const [selectedNodes, setSelectedNodes] = useState<Node[]>([]);
+  const [selectedNodes, setSelectedNodes] = useState<Node<SEONodeData>[]>([]);
   const [optimizationPanel, setOptimizationPanel] = useState<{
     isOpen: boolean;
     nodeId: string | null;
@@ -186,12 +186,12 @@ export default function SEOCanvas() {
     [setEdges]
   );
 
-  const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
+  const onNodeClick = useCallback((event: React.MouseEvent, node: Node<SEONodeData>) => {
     setSelectedNode(node);
     setIsPanelOpen(true);
   }, []);
 
-  const onSelectionChange = useCallback(({ nodes }: { nodes: Node[] }) => {
+  const onSelectionChange = useCallback(({ nodes }: { nodes: Node<SEONodeData>[] }) => {
     setSelectedNodes(nodes);
   }, []);
 
@@ -201,7 +201,7 @@ export default function SEOCanvas() {
 
   const handleAddPage = () => {
     const newId = `page-${Date.now()}`;
-    const newNode: Node = {
+    const newNode: Node<SEONodeData> = {
       id: newId,
       type: 'seoNode',
       position: { x: 50, y: 100 + nodes.length * 120 },
@@ -346,15 +346,15 @@ export default function SEOCanvas() {
                   onClick={() => onNodeClick({} as React.MouseEvent, node)}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-sm">{node.data.title}</h4>
+                    <h4 className="font-medium text-sm">{(node.data as SEONodeDataType).title}</h4>
                     <Badge 
                       variant={
-                        node.data.status === 'optimized' ? 'default' :
-                        node.data.status === 'needs-work' ? 'secondary' : 'destructive'
+                        (node.data as SEONodeDataType).status === 'optimized' ? 'default' :
+                        (node.data as SEONodeDataType).status === 'needs-work' ? 'secondary' : 'destructive'
                       }
                       className="text-xs"
                     >
-                      {node.data.seoScore}%
+                      {(node.data as SEONodeDataType).seoScore}%
                     </Badge>
                   </div>
                   <div className="text-xs text-muted-foreground mb-2">{node.data.url}</div>
@@ -529,7 +529,7 @@ export default function SEOCanvas() {
         isOpen={optimizationPanel.isOpen}
         onClose={() => setOptimizationPanel({ isOpen: false, nodeId: null, type: null })}
         nodeId={optimizationPanel.nodeId}
-        optimizationType={optimizationPanel.type}
+        optimizationType={optimizationPanel.type as 'meta' | 'schema' | 'content'}
       />
     </div>
   );

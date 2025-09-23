@@ -13,7 +13,7 @@ import { useState } from "react";
 import Index from "./pages/Index";
 import AOECanvas from "./pages/AOECanvas";
 import ContentBuilder from "./pages/ContentBuilder";
-import SiteAudit from "./pages/SiteAudit";
+import AEOAudit from "./pages/AEOAudit";
 import AIPrompts from "./pages/AIPrompts";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
@@ -36,15 +36,15 @@ const App = () => {
               <div className="flex-1 flex flex-col">
                 <TopBar />
                 <main className="flex-1 p-6">
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/canvas" element={<AOECanvas />} />
-                    <Route path="/content" element={<ContentBuilder />} />
-                    <Route path="/audit" element={<SiteAudit />} />
-                    <Route path="/prompts" element={<AIPrompts />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/canvas" element={<AOECanvas />} />
+                  <Route path="/content" element={<ContentBuilder />} />
+                  <Route path="/audit" element={<AEOAudit />} />
+                  <Route path="/prompts" element={<AIPrompts />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
                 </main>
               </div>
               <QuickActionsButton onOpenAI={() => setIsAIModalOpen(true)} />
