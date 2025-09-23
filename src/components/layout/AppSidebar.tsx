@@ -79,6 +79,25 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
+        {/* Company Information */}
+        <div className="mt-auto px-4 py-6 border-t border-sidebar-border">
+          {!collapsed && (
+            <div className="space-y-2 text-xs text-sidebar-foreground/70">
+              <div className="font-medium text-sidebar-foreground">PulseSpark.ai LLC</div>
+              <div className="space-y-1">
+                <div>6425 Living Place</div>
+                <div>Suite 200</div>
+                <div>Pittsburgh, PA 15206</div>
+                <div>United States</div>
+              </div>
+              <div className="space-y-1 pt-2">
+                <div>📞 412-206-5239</div>
+                <div>✉️ info@pulsespark.ai</div>
+              </div>
+            </div>
+          )}
+        </div>
       </SidebarContent>
     </Sidebar>
   );
