@@ -7,6 +7,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { TopBar } from "@/components/layout/TopBar";
 import Index from "./pages/Index";
+import SEOCanvas from "./pages/SEOCanvas";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +26,7 @@ const App = () => (
               <main className="flex-1 p-6">
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/canvas" element={<div className="p-8 text-center text-muted-foreground">SEO Canvas - Coming Soon</div>} />
+                  <Route path="/canvas" element={<SEOCanvas />} />
                   <Route path="/content" element={<div className="p-8 text-center text-muted-foreground">Content Builder - Coming Soon</div>} />
                   <Route path="/audit" element={<div className="p-8 text-center text-muted-foreground">Site Audit - Coming Soon</div>} />
                   <Route path="/prompts" element={<div className="p-8 text-center text-muted-foreground">AI Prompts - Coming Soon</div>} />
