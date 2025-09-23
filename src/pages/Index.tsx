@@ -17,6 +17,7 @@ import { PricingTiers } from "@/components/dashboard/PricingTiers";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { HowItWorksModal } from "@/components/shared/HowItWorksModal";
 
 const Index = () => {
   return (
@@ -41,33 +42,15 @@ const Index = () => {
             </div>
           </div>
           <div className="flex gap-2">
-            <Dialog>
-              <DialogTrigger asChild>
+            <HowItWorksModal 
+              context="general"
+              trigger={
                 <Button variant="outline" size="sm">
                   <Info className="h-4 w-4 mr-2" />
                   What is AEO?
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Why AEO beats SEO</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <div className="bg-muted p-4 rounded-lg">
-                    <p className="font-medium text-destructive">Traditional SEO is dying</p>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <p>• <strong>60% of searches</strong> now go through AI engines</p>
-                    <p>• By 2026, <strong>60% of searches</strong> won't even see Google results</p>
-                    <p>• Your content needs to be <strong>THE source AI trusts</strong></p>
-                    <p>• AI engines need different optimization strategies</p>
-                  </div>
-                  <div className="bg-citation-high/10 p-4 rounded-lg border border-citation-high/20">
-                    <p className="text-sm font-medium">Answer Engine Optimization (AEO) is the future of search visibility.</p>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
+              }
+            />
             <Button variant="destructive" size="sm">Fix Now - Save $47K</Button>
           </div>
         </div>

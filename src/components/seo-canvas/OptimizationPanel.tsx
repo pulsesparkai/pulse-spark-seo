@@ -183,7 +183,7 @@ export function OptimizationPanel({ isOpen, onClose, nodeId, optimizationType }:
             Cancel
           </Button>
           <div className="flex gap-2">
-            <Button variant="outline">
+            <Button variant="outline" onClick={() => toast.info('Preview functionality coming soon!')}>
               <Eye className="h-4 w-4 mr-2" />
               Preview
             </Button>

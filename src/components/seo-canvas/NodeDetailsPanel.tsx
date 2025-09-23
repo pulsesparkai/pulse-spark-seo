@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { SEONode, SEONodeData } from './types';
 import { Node } from '@xyflow/react';
+import { toast } from 'sonner';
 
 interface NodeDetailsPanelProps {
   node: Node<SEONodeData> | null;
@@ -110,7 +111,7 @@ export function NodeDetailsPanel({ node, isOpen, onClose, onOptimize }: NodeDeta
                 Fix Meta Tags
               </Button>
               
-              <Button variant="outline" size="sm" className="w-full justify-start">
+              <Button variant="outline" size="sm" className="w-full justify-start" onClick={() => toast.info('Opening internal links analysis...')}>
                 <Link className="h-4 w-4 mr-2" />
                 Internal Links
               </Button>

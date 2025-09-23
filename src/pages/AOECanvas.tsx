@@ -26,6 +26,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Play, RotateCcw, Zap, Info } from 'lucide-react';
 import { toast } from 'sonner';
+import { HowItWorksModal } from '@/components/shared/HowItWorksModal';
 
 const nodeTypes = {
   seoNode: SEONode,
@@ -314,10 +315,7 @@ export default function SEOCanvas() {
               <Zap className="h-4 w-4 mr-2" />
               Simulation Mode
             </Button>
-            <Button variant="outline" size="sm">
-              <Info className="h-4 w-4 mr-2" />
-              How It Works
-            </Button>
+            <HowItWorksModal context="aeo" />
           </div>
         </div>
       </div>

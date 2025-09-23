@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, TrendingUp, DollarSign, Target, Zap } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface AEOIssue {
   id: string;
@@ -217,7 +218,7 @@ export function AEOIssuesSection() {
               <p className="text-sm text-muted-foreground">Fix these 3 issues to gain +${(47000 / 1000).toFixed(0)}K/month in 14 days</p>
             </div>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => toast.info('Exporting AEO audit report...')}>
                 Export Report
               </Button>
               <Button size="sm" className="bg-citation-high text-white">

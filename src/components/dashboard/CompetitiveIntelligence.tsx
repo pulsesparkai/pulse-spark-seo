@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { ExternalLink, Target } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface CompetitorData {
   query: string;
@@ -81,7 +82,7 @@ export function CompetitiveIntelligence() {
           <h3 className="text-lg font-bold">Competitive Intelligence</h3>
           <p className="text-sm text-muted-foreground">Who AI Engines Prefer</p>
         </div>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" onClick={() => toast.info('Opening full competitive report...')}>
           <ExternalLink className="h-4 w-4 mr-2" />
           Full Report
         </Button>
@@ -138,7 +139,7 @@ export function CompetitiveIntelligence() {
                       {row.opportunity}
                     </span>
                     {!row.opportunity.includes('Dominating') && (
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" onClick={() => toast.info(`Optimizing for "${row.query}"...`)}>
                         <Target className="h-3 w-3 mr-1" />
                         Fix
                       </Button>

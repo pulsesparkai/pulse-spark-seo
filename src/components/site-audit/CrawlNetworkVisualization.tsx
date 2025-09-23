@@ -341,7 +341,7 @@ export function CrawlNetworkVisualization() {
             AI View
           </Button>
 
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => toast.info('Exporting crawl network data...')}>
             <Download className="h-4 w-4 mr-1" />
             Export
           </Button>

@@ -336,7 +336,17 @@ export function SchemaGenerator() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-semibold">JSON-LD Preview</h3>
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="flex items-center gap-2" onClick={() => {
+            const schemaText = generateJSONLD();
+            const blob = new Blob([schemaText], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'schema-markup.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            toast.success('Schema markup exported successfully!');
+          }}>
             <Download className="h-4 w-4" />
             Export
           </Button>

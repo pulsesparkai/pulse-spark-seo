@@ -274,11 +274,11 @@ Please provide the enhanced version that addresses these priorities:
             <CardTitle className="text-lg">Quick Actions</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <Button variant="outline" size="sm" className="w-full justify-start">
+            <Button variant="outline" size="sm" className="w-full justify-start" onClick={() => toast.info('Preview result coming soon!')}>
               <Eye className="h-4 w-4 mr-2" />
               Preview Result
             </Button>
-            <Button variant="outline" size="sm" className="w-full justify-start">
+            <Button variant="outline" size="sm" className="w-full justify-start" onClick={() => toast.info('Running SEO analysis...')}>
               <TrendingUp className="h-4 w-4 mr-2" />
               SEO Analysis
             </Button>

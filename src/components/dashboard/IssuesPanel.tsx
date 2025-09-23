@@ -1,5 +1,6 @@
 import { AlertTriangle, FileX, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from 'sonner';
 
 interface Issue {
   id: string;
@@ -45,7 +46,7 @@ export function IssuesPanel() {
           <h3 className="text-lg font-semibold text-card-foreground">Issues & Opportunities</h3>
           <p className="text-sm text-muted-foreground">Areas for SEO improvement</p>
         </div>
-        <Button variant="outline" size="sm" className="text-xs">
+        <Button variant="outline" size="sm" className="text-xs" onClick={() => toast.info('Opening full issues report...')}>
           View All
         </Button>
       </div>

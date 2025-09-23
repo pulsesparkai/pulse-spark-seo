@@ -249,7 +249,7 @@ Description: [your description]`
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-semibold">Competitor Analysis</h3>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => toast.info('Refreshing competitor data...')}>
             Refresh Data
           </Button>
         </div>

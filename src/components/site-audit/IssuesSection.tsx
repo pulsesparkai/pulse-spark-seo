@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { IssueCard, AuditIssue } from './IssueCard';
 import { AlertCircle, AlertTriangle, CheckCircle2, Download, Filter } from 'lucide-react';
+import { toast } from 'sonner';
 
 const mockIssues: AuditIssue[] = [
   {
@@ -244,11 +245,11 @@ export function IssuesSection() {
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold">Issues & Opportunities</h2>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="flex items-center gap-2" onClick={() => toast.info('Opening filter options...')}>
             <Filter className="h-4 w-4" />
             Filter
           </Button>
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="flex items-center gap-2" onClick={() => toast.info('Exporting issues report...')}>
             <Download className="h-4 w-4" />
             Export Report
           </Button>

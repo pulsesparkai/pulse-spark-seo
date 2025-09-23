@@ -7,12 +7,16 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { 
   ChevronDown, 
   ChevronRight, 
-  AlertCircle, 
+  AlertCircle,
+  TrendingUp, 
+  Calendar, 
+  DollarSign, 
+  Target,
+  Download,
   AlertTriangle, 
   CheckCircle2, 
   ExternalLink, 
   Code, 
-  TrendingUp,
   Sparkles,
   Eye
 } from 'lucide-react';
@@ -254,7 +258,7 @@ Focus on actionable, technical instructions that a developer or SEO specialist c
                   <Eye className="h-4 w-4" />
                   Affected Pages ({issue.affectedPages.length})
                 </h4>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={() => toast.info('Exporting affected pages list...')}>
                   Export List
                 </Button>
               </div>
