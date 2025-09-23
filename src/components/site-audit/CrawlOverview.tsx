@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Search, Globe, FileText, Database, Link, Play, Pause } from 'lucide-react';
+import { CrawlNetworkVisualization } from './CrawlNetworkVisualization';
 
 interface CrawlStats {
   totalPages: number;
@@ -214,54 +215,13 @@ export function CrawlOverview() {
         </CardContent>
       </Card>
 
-      {/* Spider Visualization */}
+      {/* Network Visualization */}
       <Card>
         <CardHeader>
-          <CardTitle>Crawl Visualization</CardTitle>
+          <CardTitle>Live Crawl Network Visualization</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="relative h-32 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                {/* Central node */}
-                <div className="w-4 h-4 bg-primary rounded-full animate-pulse" />
-                
-                {/* Animated connections */}
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-px bg-gradient-to-r from-primary to-transparent animate-pulse"
-                    style={{
-                      height: '60px',
-                      top: '8px',
-                      left: '8px',
-                      transformOrigin: 'bottom',
-                      transform: `rotate(${i * 60}deg)`,
-                      animationDelay: `${i * 200}ms`
-                    }}
-                  />
-                ))}
-
-                {/* Outer nodes */}
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={`outer-${i}`}
-                    className="absolute w-2 h-2 bg-secondary rounded-full animate-bounce"
-                    style={{
-                      top: `${8 + 60 * Math.sin((i * Math.PI) / 3)}px`,
-                      left: `${8 + 60 * Math.cos((i * Math.PI) / 3)}px`,
-                      animationDelay: `${i * 300}ms`,
-                      animationDuration: '2s'
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            <div className="absolute bottom-4 left-4 text-sm text-muted-foreground">
-              Discovering page relationships and internal link structure...
-            </div>
-          </div>
+        <CardContent className="p-0">
+          <CrawlNetworkVisualization />
         </CardContent>
       </Card>
     </div>
