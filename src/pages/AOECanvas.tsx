@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 import {
   ReactFlow,
   Node,
@@ -141,6 +141,7 @@ const initialEdges: Edge[] = [
   { id: 'e4-perplexity', source: '4', target: 'perplexity', animated: true, style: { stroke: 'hsl(var(--citation-medium))' } },
 ];
 
+// AEO Canvas - Answer Engine Optimization visualization
 export default function AOECanvas() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
