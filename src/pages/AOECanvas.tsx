@@ -142,7 +142,7 @@ const initialEdges: Edge[] = [
 ];
 
 // AEO Canvas - Answer Engine Optimization visualization
-export default function AOECanvas() {
+export default function SEOCanvas() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [selectedNode, setSelectedNode] = useState<SEONodeType | null>(null);
