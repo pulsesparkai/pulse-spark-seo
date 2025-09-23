@@ -8,6 +8,7 @@ import {
   Settings,
   ChevronRight 
 } from "lucide-react";
+import pulseLogo from "@/assets/pulse_logo_black_180x40.svg";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -38,11 +39,12 @@ export function AppSidebar() {
       <SidebarContent className="bg-sidebar shadow-sidebar">
         <div className="px-4 py-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </div>
-            {!collapsed && (
-              <span className="font-bold text-lg text-sidebar-primary">PulseSpark</span>
+            {!collapsed ? (
+              <img src={pulseLogo} alt="PulseSpark" className="h-8" />
+            ) : (
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+                <Sparkles className="h-4 w-4 text-primary-foreground" />
+              </div>
             )}
           </div>
         </div>
