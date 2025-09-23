@@ -1,4 +1,4 @@
-export interface SEONode {
+interface SEONodeData {
   id: string;
   url: string;
   title: string;
@@ -6,7 +6,13 @@ export interface SEONode {
   status: 'optimized' | 'needs-work' | 'critical';
   seoScore: number;
   missingElements: string[];
-  position: { x: number; y: number };
+  citationProbability?: {
+    chatgpt: number;
+    claude: number;
+    perplexity: number;
+    gemini: number;
+    deepseek: number;
+  };
 }
 
 export interface SEOIssue {

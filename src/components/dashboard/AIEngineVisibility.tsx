@@ -98,16 +98,31 @@ export function AIEngineVisibility() {
 
   return (
     <div className="space-y-6">
-      {/* Alert Bar */}
-      <Card className="p-4 bg-destructive/10 border-destructive/20">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-destructive rounded-full animate-pulse" />
-            <span className="font-medium text-destructive">
-              🔴 You're losing $12,000/month from missed AI citations
-            </span>
+      {/* Citation Tracking Methodology */}
+      <Card className="p-4 bg-muted/30">
+        <h4 className="font-medium text-sm mb-3">How We Track AI Citations</h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-citation-high rounded-full" />
+            <div>
+              <span className="font-medium">Tier 1:</span> Direct API Tracking
+              <div className="text-xs text-muted-foreground">Perplexity, You.com, Bing - 100% accurate</div>
+            </div>
           </div>
-          <Button variant="destructive" size="sm">Fix Now</Button>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-yellow-500 rounded-full" />
+            <div>
+              <span className="font-medium">Tier 2:</span> Synthetic Query Testing
+              <div className="text-xs text-muted-foreground">1000s of test queries daily - High Confidence (85%)</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-orange-500 rounded-full" />
+            <div>
+              <span className="font-medium">Tier 3:</span> Traffic Pattern Analysis
+              <div className="text-xs text-muted-foreground">Correlation analysis - Estimated (70%)</div>
+            </div>
+          </div>
         </div>
       </Card>
 
