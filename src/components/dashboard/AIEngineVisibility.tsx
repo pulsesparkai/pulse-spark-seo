@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { TrendingUp, TrendingDown, Info } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
+// Clean implementation without hugeicons
+
 interface AIEngine {
   name: string;
   logo: string;
