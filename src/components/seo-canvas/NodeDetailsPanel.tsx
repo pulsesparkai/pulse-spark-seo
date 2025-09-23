@@ -55,7 +55,7 @@ export function NodeDetailsPanel({ node, isOpen, onClose, onOptimize }: NodeDeta
           <div>
             <h4 className="font-medium text-sm mb-3">Missing Elements</h4>
             <div className="space-y-2">
-              {node.missingElements.length > 0 ? (
+              {node.missingElements && node.missingElements.length > 0 ? (
                 node.missingElements.map((element, index) => (
                   <div key={index} className="flex items-center justify-between p-2 bg-red-50 rounded-md">
                     <span className="text-sm text-red-700">{element}</span>
